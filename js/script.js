@@ -72,13 +72,49 @@
 // }
 // document.write("<br>END")
 
-window.confirm("Definer of object type")
+// var numbers = []
+// var number = prompt("Type number")
+// var length = number.length
+// for(var k=0; k<length; k++){
+//     numbers.push(number%10)
+//     number = Math.floor(number/10)
+//     document.write("- "+numbers[k]+" ")
+// }
+// document.write("<br>END")
+
 var numbers = []
-var number = prompt("Type number")
-var length = number.length
-for(var k=0; k<length; k++){
-    numbers.push(number%10)
-    number = Math.floor(number/10)
-    document.write("- "+numbers[k]+" ")
+var strings = []
+var objects = []
+var txt = prompt("Type random numbers, sybols and txt")
+var length = txt.length
+for (var k = 0; k < length; k++) {
+    var txt1 = txt % 10
+    if(typeof txt1 == "number"){
+        numbers.push(txt1)
+    }
+    else if(typeof txt1 == "string"){
+        strings.push(txt1)
+    }
+    else{
+        objects.push(txt1)
+    }
+    txt = Math.floor(txt / 10)
 }
+console.log(numbers)
+numbers.sort()
+strings.sort()
+objects.sort()
+document.write("<br>Numbers: ")
+for (var k = 0; k < numbers.length; k++){
+    document.write(numbers[k]+",")
+}
+document.write("<br>Strings: ")
+for (var k = 0; k < numbers.length; k++){
+    document.write(strings[k]+",")
+}
+document.write("<br>Objects: ")
+for (var k = 0; k < numbers.length; k++){
+    document.write(objects[k]+",")
+}
+document.write("- " + numbers[k] + " ")
 document.write("<br>END")
