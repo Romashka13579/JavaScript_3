@@ -82,39 +82,71 @@
 // }
 // document.write("<br>END")
 
-var numbers = []
-var strings = []
-var objects = []
-var txt = prompt("Type random numbers, sybols and txt")
-var length = txt.length
-for (var k = 0; k < length; k++) {
-    var txt1 = txt % 10
-    if(typeof txt1 == "number"){
-        numbers.push(txt1)
+// var numbers = []
+// var strings = []
+// var objects = []
+// var txt = prompt("Type random numbers, sybols and txt")
+// var length = txt.length
+// for (var k = 0; k < length; k++) {
+//     var txt1 = txt % 10
+//     if(typeof txt1 == "number"){
+//         numbers.push(txt1)
+//     }
+//     else if(typeof txt1 == "string"){
+//         strings.push(txt1)
+//     }
+//     else{
+//         objects.push(txt1)
+//     }
+//     txt = Math.floor(txt / 10)
+// }
+// console.log(numbers)
+// numbers.sort()
+// strings.sort()
+// objects.sort()
+// document.write("<br>Numbers: ")
+// for (var k = 0; k < numbers.length; k++){
+//     document.write(numbers[k]+",")
+// }
+// document.write("<br>Strings: ")
+// for (var k = 0; k < numbers.length; k++){
+//     document.write(strings[k]+",")
+// }
+// document.write("<br>Objects: ")
+// for (var k = 0; k < numbers.length; k++){
+//     document.write(objects[k]+",")
+// }
+// document.write("- " + numbers[k] + " ")
+// document.write("<br>END")
+
+document.write("Timer in console")
+var seconds = 0
+var minutes = 0
+var hours = 0
+function Seconds() {
+    seconds++
+    if (seconds == "60") {
+        seconds -= 60
+        Minutes()
     }
-    else if(typeof txt1 == "string"){
-        strings.push(txt1)
+    console.log(""+hours+" "+minutes+" "+seconds+"")
+}
+function Minutes() {
+    minutes++
+    if (minutes == "60") {
+        minutes -= 60
+        Hours()
     }
-    else{
-        objects.push(txt1)
+}
+function Hours() {
+    hours++
+    if (hours == "24") {
+        hours -= 24
+        Text_f()
     }
-    txt = Math.floor(txt / 10)
 }
-console.log(numbers)
-numbers.sort()
-strings.sort()
-objects.sort()
-document.write("<br>Numbers: ")
-for (var k = 0; k < numbers.length; k++){
-    document.write(numbers[k]+",")
+function Text_f() {
+    document.write("Day has passed")
+    clearInterval()
 }
-document.write("<br>Strings: ")
-for (var k = 0; k < numbers.length; k++){
-    document.write(strings[k]+",")
-}
-document.write("<br>Objects: ")
-for (var k = 0; k < numbers.length; k++){
-    document.write(objects[k]+",")
-}
-document.write("- " + numbers[k] + " ")
-document.write("<br>END")
+setInterval(Seconds, 1000)
